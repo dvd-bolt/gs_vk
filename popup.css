@@ -1,0 +1,281 @@
+/* ============================================================
+   VK Voice Downloader — Popup Styles v2.0
+   ============================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 320px !important;
+  height: 420px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #141424 !important;
+  color: #ffffff !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 13px;
+  line-height: 1.4;
+  overflow: hidden !important;
+}
+
+.popup {
+  width: 320px;
+  height: 420px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #141424;
+}
+
+/* Header */
+.popup-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.popup-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #4361ee, #3a86ff);
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.35);
+}
+
+.popup-title h1 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.popup-version {
+  font-size: 10px;
+  color: #6b7280;
+}
+
+/* Status */
+.popup-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6b7280;
+  flex-shrink: 0;
+}
+
+.status-indicator.active {
+  background: #4bb34b;
+  box-shadow: 0 0 6px rgba(75, 179, 75, 0.5);
+}
+
+.status-indicator.inactive {
+  background: #e64646;
+}
+
+.status-indicator.searching {
+  background: #fbbf24;
+  animation: statusPulse 1s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Counter */
+.popup-counter {
+  text-align: center;
+  padding: 8px;
+  background: linear-gradient(135deg, rgba(67, 97, 238, 0.12), rgba(58, 134, 255, 0.08));
+  border-radius: 10px;
+  border: 1px solid rgba(67, 97, 238, 0.2);
+}
+
+.counter-value {
+  font-size: 26px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #4361ee, #3a86ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.counter-label {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+/* Actions */
+.popup-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4361ee, #3a86ff);
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.07);
+  color: #9ca3af;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+/* Voice List Container */
+.voice-list-container {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 8px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.voice-list-header {
+  font-size: 11px;
+  font-weight: 600;
+  color: #8fadc8;
+  margin-bottom: 6px;
+}
+
+.voice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.empty-hint {
+  font-size: 11px;
+  color: #6b7280;
+  text-align: center;
+  padding: 16px 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+}
+
+.voice-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.voice-item-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.voice-item-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.voice-item-sub {
+  font-size: 10px;
+  color: #6b7280;
+}
+
+.voice-item-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(67, 97, 238, 0.25);
+  color: #3a86ff;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.voice-item-btn:hover {
+  background: #4361ee;
+  color: #fff;
+}
+
+.voice-item-btn.success {
+  background: rgba(75, 179, 75, 0.25);
+  color: #4bb34b;
+}
+
+.voice-item-btn.error {
+  background: rgba(230, 70, 70, 0.25);
+  color: #e64646;
+}
+
+/* Footer */
+.popup-footer {
+  text-align: center;
+  font-size: 10px;
+  color: #4b5563;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding-top: 6px;
+  margin-top: auto;
+}

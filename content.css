@@ -1,0 +1,130 @@
+/* ============================================================
+   VK Voice Downloader — Content Script Styles v2.0
+   Prominent, High Z-Index Download Buttons
+   ============================================================ */
+
+.vkvd-download-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 28px !important;
+  height: 28px !important;
+  padding: 0 !important;
+  margin-left: 8px !important;
+  border: none !important;
+  border-radius: 50% !important;
+  background: #4361ee !important;
+  color: #ffffff !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  z-index: 999999 !important;
+  vertical-align: middle !important;
+  outline: none !important;
+  pointer-events: auto !important;
+  box-shadow: 0 2px 8px rgba(67, 97, 238, 0.4) !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+
+.vkvd-download-btn svg {
+  display: block !important;
+  width: 15px !important;
+  height: 15px !important;
+  stroke: #ffffff !important;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Hover */
+.vkvd-download-btn:hover {
+  background: #3a86ff !important;
+  transform: scale(1.12) !important;
+  box-shadow: 0 4px 12px rgba(58, 134, 255, 0.6) !important;
+}
+
+.vkvd-download-btn:hover svg {
+  transform: translateY(1px) !important;
+}
+
+/* Active / press */
+.vkvd-download-btn:active {
+  transform: scale(0.92) !important;
+}
+
+/* Downloading — spinning animation */
+.vkvd-download-btn.vkvd-downloading {
+  pointer-events: none !important;
+  background: #3a86ff !important;
+  animation: vkvd-pulse 1s ease-in-out infinite !important;
+}
+
+/* Success — green check */
+.vkvd-download-btn.vkvd-success {
+  background: #4bb34b !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(75, 179, 75, 0.5) !important;
+  animation: vkvd-pop 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) !important;
+}
+
+.vkvd-download-btn.vkvd-success svg {
+  stroke: #ffffff !important;
+}
+
+/* Error — red X */
+.vkvd-download-btn.vkvd-error {
+  background: #e64646 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(230, 70, 70, 0.5) !important;
+  animation: vkvd-shake 0.4s ease-in-out !important;
+}
+
+.vkvd-download-btn.vkvd-error svg {
+  stroke: #ffffff !important;
+}
+
+/* Animations */
+@keyframes vkvd-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.95); }
+}
+
+@keyframes vkvd-pop {
+  0% { transform: scale(0.5); }
+  50% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+@keyframes vkvd-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-3px); }
+  40% { transform: translateX(3px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+}
+
+/* Tooltip */
+.vkvd-download-btn::after {
+  content: attr(title);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.3;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 9999999;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.vkvd-download-btn:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}

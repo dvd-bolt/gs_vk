@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru" style="width: 320px; height: 420px;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VK Voice Downloader</title>
+  <style>
+    html, body {
+      width: 320px !important;
+      height: 420px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      background: #141424 !important;
+      color: #ffffff !important;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      overflow: hidden !important;
+    }
+  </style>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup">
+    <!-- Header -->
+    <div class="popup-header">
+      <div class="popup-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+          <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+          <line x1="12" y1="19" x2="12" y2="23"/>
+          <line x1="8" y1="23" x2="16" y2="23"/>
+        </svg>
+      </div>
+      <div class="popup-title">
+        <h1>VK Voice DL</h1>
+        <span class="popup-version">v2.0</span>
+      </div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="popup-status" id="status">
+      <div class="status-indicator" id="statusIndicator"></div>
+      <span id="statusText">Поиск голосовых...</span>
+    </div>
+
+    <!-- Counter -->
+    <div class="popup-counter" id="counterSection">
+      <div class="counter-value" id="voiceCount">0</div>
+      <div class="counter-label">найдено на странице</div>
+    </div>
+
+    <!-- Actions -->
+    <div class="popup-actions">
+      <button class="btn btn-primary" id="downloadAllBtn" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        <span>Скачать все</span>
+      </button>
+      <button class="btn btn-secondary" id="rescanBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 4 23 10 17 10"/>
+          <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+        </svg>
+        <span>Обновить</span>
+      </button>
+    </div>
+
+    <!-- List of Discovered Voice Messages -->
+    <div class="voice-list-container" id="voiceListContainer">
+      <div class="voice-list-header">Найденные голосовые:</div>
+      <div class="voice-list" id="voiceList">
+        <div class="empty-hint">Нажмите Play у ГС в ВК, если список пуст</div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="popup-footer">
+      <span>VK Voice Downloader v2.0</span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

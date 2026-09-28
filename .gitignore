@@ -1,0 +1,9 @@
+# OS & Editor files
+.DS_Store
+Thumbs.db
+*.swp
+
+# Extension packages & keys
+*.zip
+*.crx
+*.pem
